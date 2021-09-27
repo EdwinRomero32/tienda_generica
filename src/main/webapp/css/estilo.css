@@ -1,0 +1,23 @@
+.usuarios {
+	 text-transform: uppercase;
+	 font-weight: bold;
+	 color:white;
+	 font-size: 30px;
+}
+
+.roles{
+	font-size:50;
+	color:white;
+	 text-transform: uppercase;
+	 font-weight: bold;
+}
+
+.selec{
+	size: 88;
+	border-radius: 5%;
+	
+}
+
+.algo{
+	margin-left:40px;
+}
