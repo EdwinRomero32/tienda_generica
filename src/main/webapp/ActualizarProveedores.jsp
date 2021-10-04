@@ -45,65 +45,29 @@
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                         <div class="algo">
-                                <input class="form-control"  name="txtnit" type="text" placeholder="Nit" required/>
+                         <%
+                        long nit = Long.parseLong(request.getParameter("nit"));
+                        ProveedoresDTO pro = ProveedorDAO.buscarProveedor(nit);
+                        %>
+                                <input class="form-control"  name="txtnit2" type="text" value="<%=pro.getNit_proveedor() %>" hidden/>
                                 <br>
-                                <input class="form-control"  name="txtciudad" type="text" placeholder="Ciudad" required/>
+                                <input class="form-control"  name="txtciudad2" type="text" value="<%=pro.getCiudad_proveedor() %>" required/>
                                 <br>
-                                <input class="form-control"  name="txtdireccion" type="text" placeholder="Dirección" required/>
+                                <input class="form-control"  name="txtdireccion2" type="text" value="<%=pro.getDireccion_proveedor() %>" required/>
                                 <br>
-                                <input class="form-control"  name="txtnombres" type="text" placeholder="Nombre" required/>
+                                <input class="form-control"  name="txtnombres2" type="text" value="<%=pro.getNombre_proveedor() %>" required/>
                                 <br>
-                                <input class="form-control"  name="txttelefono" type="text" placeholder="Número de telefono" required/>
+                                <input class="form-control"  name="txttelefono2" type="text" value="<%=pro.getTelefono_proveedor() %>" required/>
                              <br>
                             </div>
                           </div>
                         </div>
                     <div class="text-center">
-                    <input class="btn btn-primary btn-xl text-uppercase"  type="submit"  name="btnagregar" value="Agregar"> 
-                    <input class="btn btn-primary btn-xl text-uppercase"  type="reset"  name="limpiar" value="Limpiar">      
+                    <input class="btn btn-primary btn-xl text-uppercase"  type="submit"  name="btnmodificar" value="Modificar"> 
+                    <input class="btn btn-primary btn-xl text-uppercase"  type="submit"  name="btnconsultar" value="Consultar">      
                     </div></form>
                 <br>
-            <div id="contenidotabla" class="contabla">    
-                <table style="border-color:white; border:2px;">
-				<tr>
-				<th>Nit</th>
-				<th>Ciudad</th>
-				<th>Dirección</th>
-				<th>Nombre</th>
-				<th>Telefono</th>
-				<th></th>
-				<th></th>
-				</tr>
-	                <%
-	               List<ProveedoresDTO> listar = ProveedorDAO.buscarProveedores();
-	                for (ProveedoresDTO pro : listar)
-	                {
-	                	%>
-	                	<script type="text/javascript">
-						    function borra(){
-						    	var eli = confirm("Desea borrar este proveedor?");
-						    	if(eli){
-						    		window.location.href="gestionpro?nit=<%=pro.getNit_proveedor()%>";
-						    	}else{
-						    		alert("No se hicieron cambios");
-						    	}
-						    }
-						</script>
-                  <tr>
-                  	<td><%=pro.getNit_proveedor() %></td>
-                  	<td><%=pro.getCiudad_proveedor()%></td>
-                  	<td><%=pro.getDireccion_proveedor()%></td>
-                  	<td><%=pro.getNombre_proveedor()%></td>
-                  	<td><%=pro.getTelefono_proveedor()%></td>
-                  	<td><a class="botones" href="ActualizarProveedores.jsp?nit=<%=pro.getNit_proveedor()%>">Modificar</a></td>
-                  	<td><a class="botones" onClick = "borra();">Eliminar</a></td>
-                  	
-                 </tr>
-                 <%
-                }    
-                %>	
-                </table>
-           </div>
+          
         </section> 
 </body>
 </html>

@@ -15,6 +15,7 @@
        
     </head>
     <body id="page-top">
+    </script>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
@@ -79,14 +80,24 @@
 	                for (UsuarioDTO usu : listar)
 	                {
 	                	%>
+	                    <script type="text/javascript">
+						    function borra(){
+						    	var eli = confirm("Desea borrar este usuario?");
+						    	if(eli){
+						    		window.location.href="gestionusu?cedula=<%=usu.getCedula()%>";
+						    	}else{
+						    		alert("No se hicieron cambios");
+						    	}
+						    }
+						</script>
                   <tr>
                    <td><%=usu.getCedula()%></td>
                    <td><%=usu.getNombres()%></td>
                    <td><%=usu.getEmail()%></td>
                    <td><%=usu.getUsuario()%></td>
                    <td><%=usu.getPass()%></td>
-                   <td><a href="ActualizarUsuarios.jsp?cedula=<%=usu.getCedula() %>">Modificar</a></td>
-                   <td><a href="gestionusu?cedula=<%=usu.getCedula()%>">Eliminar</a></td>
+                   <td><a class="botones" href="ActualizarUsuarios.jsp?cedula=<%=usu.getCedula() %>">Modificar</a></td>
+                   <td><a class="botones" OnClick="borra();">Eliminar</a></td>
                  </tr>
                  <%
                 }    

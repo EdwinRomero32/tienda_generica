@@ -27,14 +27,25 @@
     position: relative;
     float: center;
     width: auto;
-    margin-left:30%
+    margin-left:30%;
+ 
   
 	
 	
 }
+.botones{
+	background-color:#9192A8;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+}
 
 table {
-   width: 60%;
+   width: auto;
    border: white 4px solid;
   
    
@@ -44,8 +55,8 @@ th{
 	background: #9598DF;	
 }
 tr, td {
-   width: 25%;
-   text-align: left;
+   width: auto;
+   text-align: center;
    vertical-align: top;
    border: white 3px solid;
    border-spacing: 0;

@@ -46,11 +46,11 @@ private UsuarioDTO usuario;
 		try {
 			usuariodao.eliminarUsuario(cedula);
 			PrintWriter out = response.getWriter();	
-	    	out.println ("<script>confir('Se elimino el usuario')</script>");
+			out.println ("<script>alert('Se elimino el usuario correctamente')</script>");
 	    	out.println ("<script>window.location.href='Usuarios.jsp';</script>");
 
 			
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			
 			e.printStackTrace();
 		}
@@ -108,20 +108,12 @@ private UsuarioDTO usuario;
 		if(request.getParameter("btnconsultar")!=null) {
 			try {
 					usuariodao.buscarUsuarios();
-					response.sendRedirect("Usuarios.jsp");	
+					 PrintWriter out = response.getWriter();	
+			    		out.println ("<script>window.location.href='Usuarios.jsp';</script>");
 	        } catch (Exception ex) {
 	            ex.printStackTrace();
 	        }  
-		}
-		
-		if(request.getParameter("btneliminar")!=null) {
-			 long cedula = Long.parseLong(request.getParameter("cedula"));
-			PrintWriter out = response.getWriter();	
-	            out.println (cedula);
-	    		//out.println ("<script>window.location.href='Usuarios.jsp';</script>");
-				
 			}
-			
 		}
 	}
 	

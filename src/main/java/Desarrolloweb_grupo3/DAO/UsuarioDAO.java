@@ -25,6 +25,7 @@ public class UsuarioDAO {
 	            rs = ps.executeQuery();
 	            	logeo = rs.next();	            	
 	            	rs.close();
+	
 	            	ps.close();
 	            	conn.desconectar();
 	        }catch (Exception e){

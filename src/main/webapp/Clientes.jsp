@@ -1,5 +1,5 @@
-<%@page import="Desarrolloweb_grupo3.DAO.ProveedorDAO" %>
-<%@page import="Desarrolloweb_grupo3.DTO.ProveedoresDTO" %>
+<%@page import="Desarrolloweb_grupo3.DAO.ClienteDAO" %>
+<%@page import="Desarrolloweb_grupo3.DTO.ClientesDTO" %>
 <%@page import="java.util.ArrayList" %>
 <%@page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    	<title>Gestion Proveedores</title>
+    	<title>Gestion Clientes</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link href="css/styles.css" rel="stylesheet" />
@@ -38,18 +38,18 @@
         <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Agregar Proveedores</h2>
+                    <h2 class="section-heading text-uppercase">Agregar Clientes</h2>
                 </div>
                 </div>
-                <form  action ="<%=request.getContextPath()%>/gestionpro" method="POST" >
+                <form  action ="<%=request.getContextPath()%>/gestioncli" method="POST" >
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                         <div class="algo">
-                                <input class="form-control"  name="txtnit" type="text" placeholder="Nit" required/>
+                                <input class="form-control"  name="txtcedula" type="text" placeholder="Nit" required/>
                                 <br>
-                                <input class="form-control"  name="txtciudad" type="text" placeholder="Ciudad" required/>
+                                <input class="form-control"  name="txtdireccion" type="text" placeholder="Ciudad" required/>
                                 <br>
-                                <input class="form-control"  name="txtdireccion" type="text" placeholder="Dirección" required/>
+                                <input class="form-control"  name="txtemail" type="email" placeholder="Dirección" required/>
                                 <br>
                                 <input class="form-control"  name="txtnombres" type="text" placeholder="Nombre" required/>
                                 <br>
@@ -66,24 +66,24 @@
             <div id="contenidotabla" class="contabla">    
                 <table style="border-color:white; border:2px;">
 				<tr>
-				<th>Nit</th>
-				<th>Ciudad</th>
+				<th>Cedula</th>
 				<th>Dirección</th>
-				<th>Nombre</th>
+				<th>Correo</th>
+				<th>Nombres</th>
 				<th>Telefono</th>
 				<th></th>
 				<th></th>
 				</tr>
 	                <%
-	               List<ProveedoresDTO> listar = ProveedorDAO.buscarProveedores();
-	                for (ProveedoresDTO pro : listar)
+	               List<ClientesDTO> listar = ClienteDAO.buscarClientes()();
+	                for (ClienteDTO cli : listar)
 	                {
 	                	%>
 	                	<script type="text/javascript">
 						    function borra(){
 						    	var eli = confirm("Desea borrar este proveedor?");
 						    	if(eli){
-						    		window.location.href="gestionpro?nit=<%=pro.getNit_proveedor()%>";
+						    		window.location.href="gestioncli?cedula=<%=cli.getCedula_cliente()%>";
 						    	}else{
 						    		alert("No se hicieron cambios");
 						    	}

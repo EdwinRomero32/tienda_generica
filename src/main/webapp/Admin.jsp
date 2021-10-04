@@ -21,10 +21,10 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     	<li class="nav-item"><a class="nav-link" href="Usuarios.jsp">Gestión Usuarios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Productos.jsp">Gestión Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Clientes.jsp">Gestión Clientes</a></li>
                         <li class="nav-item"><a class="nav-link" href="Productos.jsp">Gestión Productos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Contactenos.jsp">Gestión Proveedores</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Productos.jsp">Ventas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Proveedores.jsp">Gestión Proveedores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Ventas.jsp">Ventas</a></li>
                     </ul>
                 </div>
             </div>
