@@ -53,7 +53,7 @@ public class Validausuario extends HttpServlet {
             	out.println("<script type=\"text/javascript\">");  
             	out.println("alert('Por favor verifique el usuario');");  
             	out.println("</script>");
-            	response.sendRedirect("Login.jsp");
+            	out.println ("<script>window.location.href='Login.jsp';</script>");
             	
                 
             }

@@ -21,6 +21,7 @@ public class Conexion {
         	   System.out.println("Estas conectado");
            }
         }catch (SQLException | ClassNotFoundException e){
+        	System.out.println("Hubo un error");
             System.out.println(e);
 
         }

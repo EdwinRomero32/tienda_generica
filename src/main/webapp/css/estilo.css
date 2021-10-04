@@ -21,3 +21,35 @@
 .algo{
 	margin-left:40px;
 }
+
+.contabla{
+	
+    position: relative;
+    float: center;
+    width: auto;
+    margin-left:30%
+  
+	
+	
+}
+
+table {
+   width: 60%;
+   border: white 4px solid;
+  
+   
+}
+th{
+	font-size: 18px;
+	background: #9598DF;	
+}
+tr, td {
+   width: 25%;
+   text-align: left;
+   vertical-align: top;
+   border: white 3px solid;
+   border-spacing: 0;
+   color:white;
+   background: #AFB2F5;
+}
+

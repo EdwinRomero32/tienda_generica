@@ -6,7 +6,7 @@ public class UsuarioDTO {
 	private String nombres;
     private String pass;
     private String usuario;
-    private int nivel;
+
     
     public long getCedula() {
 		return cedula;
@@ -38,12 +38,7 @@ public class UsuarioDTO {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-	public int getNivel() {
-		return nivel;
-	}
-	public void setNivel(int nivel) {
-		this.nivel = nivel;
-	}
+	
 	
 
 }

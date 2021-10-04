@@ -2,6 +2,7 @@ package Desarrolloweb_grupo3.Tienda_web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,9 +22,11 @@ import Desarrolloweb_grupo3.DTO.UsuarioDTO;
 public class gestionusu extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 private UsuarioDAO usuariodao;
+private UsuarioDTO usuario;
     
     public void init () {
     	usuariodao = new UsuarioDAO();
+    	
     }
        
     /**
@@ -39,7 +42,18 @@ private UsuarioDAO usuariodao;
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		long cedula = Long.parseLong(request.getParameter("cedula"));
+		try {
+			usuariodao.eliminarUsuario(cedula);
+			PrintWriter out = response.getWriter();	
+	    	out.println ("<script>confir('Se elimino el usuario')</script>");
+	    	out.println ("<script>window.location.href='Usuarios.jsp';</script>");
+
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -48,34 +62,68 @@ private UsuarioDAO usuariodao;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		if(request.getParameter("btnagregar")!=null) {
+			usuario = new UsuarioDTO();
         try {
         	long cedula = Long.parseLong(request.getParameter("txtcedula"));
     		String nombre = request.getParameter("txtnombre");
     		String correo = request.getParameter("txtcorreo");
     		String user = request.getParameter("txtusuario");
             String password = request.getParameter("txtpass");
-            int rol = 1;
-            UsuarioDTO usuario = new UsuarioDTO();
             usuario.setCedula(cedula);
             usuario.setNombres(nombre);
             usuario.setEmail(correo);
             usuario.setUsuario(user);
             usuario.setPass(password);
-            usuario.setNivel(rol);
-            usuariodao.registrarEstudiante(usuario);
-           
+            usuariodao.registrarUsuario(usuario); 
+            PrintWriter out = response.getWriter();	
+    		out.println ("<script>alert('Muy bien, se agrego el usuario')</script>");
+    		out.println ("<script>window.location.href='Usuarios.jsp';</script>");
         }catch(Exception e) {
-        	JOptionPane.showMessageDialog(null, e);
-        	
-        }  
-        PrintWriter out = response.getWriter();
-        out.println ("<HTML>");			
-		out.println ("<BODY>");			
-		out.println ("<script>alert('Se agrego el usuario')</script>");
-		out.println ("<script>window.location.href='Usuarios.jsp';</script>");
-		out.println ("</body>");}
-    }
+        	e.printStackTrace();
+        		}
+		}
+
+		if(request.getParameter("btnmodificar")!=null) {
+			usuario = new UsuarioDTO();
+			try {
+	    		String nombre = request.getParameter("txtnombre2");
+	    		String correo = request.getParameter("txtcorreo2");
+	    		String user = request.getParameter("txtusuario2");
+	            String password = request.getParameter("txtpass2");
+	            long cedula = Long.parseLong(request.getParameter("txtcedula2"));
+	            usuario.setEmail(correo);
+	            usuario.setNombres(nombre);
+	            usuario.setUsuario(user);
+	            usuario.setPass(password);
+	            usuario.setCedula(cedula);
+	            usuariodao.modificarUsuario(usuario);
+	            PrintWriter out = response.getWriter();	
+	            out.println ("<script>alert('Se Modifico el usiario')</script>");
+	    		out.println ("<script>window.location.href='Usuarios.jsp';</script>");
+				}catch(Exception e) {
+        	e.printStackTrace();
+        		}
+		}
+	
+		if(request.getParameter("btnconsultar")!=null) {
+			try {
+					usuariodao.buscarUsuarios();
+					response.sendRedirect("Usuarios.jsp");	
+	        } catch (Exception ex) {
+	            ex.printStackTrace();
+	        }  
+		}
 		
+		if(request.getParameter("btneliminar")!=null) {
+			 long cedula = Long.parseLong(request.getParameter("cedula"));
+			PrintWriter out = response.getWriter();	
+	            out.println (cedula);
+	    		//out.println ("<script>window.location.href='Usuarios.jsp';</script>");
+				
+			}
+			
+		}
+	}
 	
 
-}
+
