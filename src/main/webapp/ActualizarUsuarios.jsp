@@ -28,7 +28,7 @@
                     	<li class="nav-item"><a class="nav-link" href="Usuarios.jsp">Gestión Usuarios</a></li>
                         <li class="nav-item"><a class="nav-link" href="Productos.jsp">Gestión Clientes</a></li>
                         <li class="nav-item"><a class="nav-link" href="Productos.jsp">Gestión Productos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Contactenos.jsp">Gestión Proveedores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Proveedores.jsp">Gestión Proveedores</a></li>
                         <li class="nav-item"><a class="nav-link" href="Productos.jsp">Ventas</a></li>
                            <li class="nav-item"><a class="nav-link" href="index.jsp">Salir</a></li>
                     </ul>

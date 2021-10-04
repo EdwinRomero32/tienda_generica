@@ -1,5 +1,4 @@
-<%@page import="Desarrolloweb_grupo3.DAO.UsuarioDAO"%>
-<%@page import="Desarrolloweb_grupo3.DTO.UsuarioDTO"%>
+
 <%@page import="java.util.ArrayList" %>
 <%@page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -7,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    	<title>Gestion Usuarios</title>
+    	<title>Gestion Proveedores</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link href="css/styles.css" rel="stylesheet" />
@@ -38,14 +37,14 @@
         <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Agregar Usuarios</h2>
+                    <h2 class="section-heading text-uppercase">Agregar Proveedores</h2>
                 </div>
                 </div>
-                <form  action ="<%=request.getContextPath()%>/gestionusu" method="POST" >
+                <form  action ="<%=request.getContextPath()%>/gestionpro" method="POST" >
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                         <div class="algo">
-                                <input class="form-control"  name="txtcedula" type="text" placeholder="Cedula" required/>
+                                <input class="form-control"  name="txtnit" type="text" placeholder="Cedula" required/>
                                 <br>
                                 <input class="form-control"  name="txtnombre" type="text" placeholder="Nombre completo" required/>
                                 <br>
