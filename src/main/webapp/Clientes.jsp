@@ -90,12 +90,12 @@
 						    }
 						</script>
                   <tr>
-                  	<td><%=pro.getNit_proveedor() %></td>
-                  	<td><%=pro.getCiudad_proveedor()%></td>
-                  	<td><%=pro.getDireccion_proveedor()%></td>
-                  	<td><%=pro.getNombre_proveedor()%></td>
-                  	<td><%=pro.getTelefono_proveedor()%></td>
-                  	<td><a class="botones" href="ActualizarProveedores.jsp?nit=<%=pro.getNit_proveedor()%>">Modificar</a></td>
+                  	<td><%=cli.getCedula_cliente() %></td>
+                  	<td><%=cli.getDireccion_cliente()%></td>
+                  	<td><%=cli.getEmail_cliente()%></td>
+                  	<td><%=cli.getNombres_cliente()%></td>
+                  	<td><%=cli.getTelefono_clientes()%></td>
+                  	<td><a class="botones" href="ActualizarProveedores.jsp?nit=<%=cli-getCedula_cliente()%>">Modificar</a></td>
                   	<td><a class="botones" onClick = "borra();">Eliminar</a></td>
                   	
                  </tr>
