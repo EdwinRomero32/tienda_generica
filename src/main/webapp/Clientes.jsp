@@ -75,8 +75,8 @@
 				<th></th>
 				</tr>
 	                <%
-	               List<ClientesDTO> listar = ClienteDAO.buscarClientes()();
-	                for (ClienteDTO cli : listar)
+	               List<ClientesDTO> listar = ClienteDAO.buscarClientes();
+	                for (ClientesDTO cli : listar)
 	                {
 	                	%>
 	                	<script type="text/javascript">
@@ -94,8 +94,8 @@
                   	<td><%=cli.getDireccion_cliente()%></td>
                   	<td><%=cli.getEmail_cliente()%></td>
                   	<td><%=cli.getNombres_cliente()%></td>
-                  	<td><%=cli.getTelefono_clientes()%></td>
-                  	<td><a class="botones" href="ActualizarProveedores.jsp?nit=<%=cli-getCedula_cliente()%>">Modificar</a></td>
+                  	<td><%=cli.getTelefono_cliente()%></td>
+                  	<td><a class="botones" href="ActualizarProveedores.jsp?nit=<%=cli.getCedula_cliente()%>">Modificar</a></td>
                   	<td><a class="botones" onClick = "borra();">Eliminar</a></td>
                   	
                  </tr>
