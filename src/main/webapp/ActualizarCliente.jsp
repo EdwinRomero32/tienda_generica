@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    	<title>Gestion Clientes</title>
+    	<title>Actualizar Clientes</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link href="css/styles.css" rel="stylesheet" />
@@ -38,72 +38,36 @@
         <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Agregar Clientes</h2>
+                    <h2 class="section-heading text-uppercase">Actualizar Clientes</h2>
                 </div>
                 </div>
                 <form  action ="<%=request.getContextPath()%>/gestioncli" method="POST" >
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                         <div class="algo">
-                                <input class="form-control"  name="txtcedula" type="text" placeholder="Cedula" required/>
+                         <%
+                        long cedula = Long.parseLong(request.getParameter("cedula"));
+                        ClientesDTO cli = ClienteDAO.buscarCliente(cedula);
+                        %>
+                                <input class="form-control"  name="txtcedula" type="text" value="<%=cli.getCedula_cliente() %>" hidden/>
                                 <br>
-                                <input class="form-control"  name="txtdireccion" type="text" placeholder="Dirección" required/>
+                                <input class="form-control"  name="txtdireccion" type="text" value="<%=cli.getDireccion_cliente() %>" required/>
                                 <br>
-                                <input class="form-control"  name="txtemail" type="email" placeholder="Correo" required/>
+                                <input class="form-control"  name="txtemail" type="email" value="<%=cli.getEmail_cliente() %>" required/>
                                 <br>
-                                <input class="form-control"  name="txtnombres" type="text" placeholder="Nombre Completo" required/>
+                                <input class="form-control"  name="txtnombres" type="text" value="<%=cli.getNombres_cliente() %>" required/>
                                 <br>
-                                <input class="form-control"  name="txttelefono" type="text" placeholder="Número de telefono" required/>
+                                <input class="form-control"  name="txttelefono" type="text" value="<%=cli.getTelefono_cliente() %>" required/>
                              <br>
                             </div>
                           </div>
                         </div>
                     <div class="text-center">
-                    <input class="btn btn-primary btn-xl text-uppercase"  type="submit"  name="btnagregar" value="Agregar"> 
-                    <input class="btn btn-primary btn-xl text-uppercase"  type="reset"  name="limpiar" value="Limpiar">      
+                    <input class="btn btn-primary btn-xl text-uppercase"  type="submit"  name="btnmodificar" value="Modificar"> 
+                    <input class="btn btn-primary btn-xl text-uppercase"  type="submit"  name="btnconsultar" value="Consultar">      
                     </div></form>
                 <br>
-            <div id="contenidotabla" class="contabla">    
-                <table style="border-color:white; border:2px;">
-				<tr>
-				<th>Cedula</th>
-				<th>Dirección</th>
-				<th>Correo</th>
-				<th>Nombres</th>
-				<th>Telefono</th>
-				<th></th>
-				<th></th>
-				</tr>
-	                <%
-	               List<ClientesDTO> listar = ClienteDAO.buscarClientes();
-	                for (ClientesDTO cli : listar)
-	                {
-	                	%>
-	                	<script type="text/javascript">
-						    function borra(){
-						    	var eli = confirm("Desea borrar este cliente?");
-						    	if(eli){
-						    		window.location.href="gestioncli?cedula=<%=cli.getCedula_cliente()%>";
-						    	}else{
-						    		alert("No se hicieron cambios");
-						    	}
-						    }
-						</script>
-                  <tr>
-                  	<td><%=cli.getCedula_cliente() %></td>
-                  	<td><%=cli.getDireccion_cliente()%></td>
-                  	<td><%=cli.getEmail_cliente()%></td>
-                  	<td><%=cli.getNombres_cliente()%></td>
-                  	<td><%=cli.getTelefono_cliente()%></td>
-                  	<td><a class="botones" href="ActualizarCliente.jsp?cedula=<%=cli.getCedula_cliente()%>">Modificar</a></td>
-                  	<td><a class="botones" onClick = "borra();">Eliminar</a></td>
-                  	
-                 </tr>
-                 <%
-                }    
-                %>	
-                </table>
-           </div>
+          
         </section> 
 </body>
 </html>

@@ -14,7 +14,7 @@ public class ClienteDAO {
 		try {
 			Conexion conn = new Conexion();
 			PreparedStatement ps = null;
-			String consulta = "INSERT INTO clientes (cedula_clientes, direccion_cliente, email_cliente, nombres_cliente, telefono_cliente) values (?,?,?,?,?)";
+			String consulta = "INSERT INTO clientes (cedula_cliente, direccion_cliente, email_cliente, nombres_cliente, telefono_cliente) values (?,?,?,?,?)";
 			ps = conn.getConnection().prepareStatement(consulta);
 			ps.setLong(1, cliente.getCedula_cliente());
 			ps.setString(2, cliente.getDireccion_cliente());
@@ -95,7 +95,7 @@ public class ClienteDAO {
         }
     }
 	
-	public static ClientesDTO buscarProveedor(long cedula) {
+	public static ClientesDTO buscarCliente(long cedula) {
     	ClientesDTO cli = new ClientesDTO();
     	try {
     		PreparedStatement ps = null;
