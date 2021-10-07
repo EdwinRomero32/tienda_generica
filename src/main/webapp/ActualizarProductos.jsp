@@ -1,5 +1,7 @@
 <%@page import="Desarrolloweb_grupo3.DAO.ProveedorDAO" %>
 <%@page import="Desarrolloweb_grupo3.DTO.ProveedoresDTO" %>
+<%@page import="Desarrolloweb_grupo3.DAO.ProductoDAO" %>
+<%@page import="Desarrolloweb_grupo3.DTO.ProductosDTO" %>
 <%@page import="java.util.ArrayList" %>
 <%@page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -7,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    	<title>Actualizacion de Proveedores</title>
+    	<title>Actualizacion de Productos</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link href="css/styles.css" rel="stylesheet" />
@@ -38,26 +40,36 @@
         <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Actualizar Proveedores</h2>
+                    <h2 class="section-heading text-uppercase">Actualizar Productos</h2>
                 </div>
                 </div>
-                <form  action ="<%=request.getContextPath()%>/gestionpro" method="POST" >
+                <form  action ="<%=request.getContextPath()%>/gestionprodu" method="POST" >
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                         <div class="algo">
                          <%
-                        long nit = Long.parseLong(request.getParameter("nit"));
-                        ProveedoresDTO pro = ProveedorDAO.buscarProveedor(nit);
+                        long codigo = Long.parseLong(request.getParameter("codigo"));
+                        ProductosDTO prod = ProductoDAO.buscarProducto(codigo);
                         %>
-                                <input class="form-control"  name="txtnit2" type="text" value="<%=pro.getNit_proveedor() %>" hidden/>
+                                 <input class="form-control"  name="txtcodigo" type="text" placeholder="Codigo Producto" value = "<%=prod.getCodigo_producto()%>" hidden/>
                                 <br>
-                                <input class="form-control"  name="txtciudad2" type="text" value="<%=pro.getCiudad_proveedor() %>" required/>
+                                <input class="form-control"  name="txtiva" type="text" placeholder="% de Iva" value = "<%=prod.getIva_compra()%>" required/>
                                 <br>
-                                <input class="form-control"  name="txtdireccion2" type="text" value="<%=pro.getDireccion_proveedor() %>" required/>
+                                <select class="form-control" name="txtnitproveedor">
+                                   <%
+						               List<ProveedoresDTO> listar = ProveedorDAO.buscarProveedores();
+						                for (ProveedoresDTO pro : listar)
+						                {
+						                	%>     	
+                                 <option value="<%=pro.getNit_proveedor()%>"><%=pro.getNombre_proveedor() %></option>
+                                   <% }  %>	
+						                </select>
                                 <br>
-                                <input class="form-control"  name="txtnombres2" type="text" value="<%=pro.getNombre_proveedor() %>" required/>
+                                <input class="form-control"  name="txtnombres" type="text" placeholder="Nombre" value = "<%=prod.getNombre_producto()%>"required/>
                                 <br>
-                                <input class="form-control"  name="txttelefono2" type="text" value="<%=pro.getTelefono_proveedor() %>" required/>
+                                <input class="form-control"  name="txtpreciocom" type="text" placeholder="Precio Compra" value = "<%=prod.getPrecio_compra()%>"required/>
+                                <br>
+                                <input class="form-control"  name="txtprecioven" type="text" placeholder="Precio Venta" value = "<%=prod.getPrecio_venta()%>"required/>
                              <br>
                             </div>
                           </div>
