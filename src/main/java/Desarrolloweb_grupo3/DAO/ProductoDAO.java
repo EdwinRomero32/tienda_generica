@@ -62,7 +62,7 @@ public class ProductoDAO {
         Conexion conn = new Conexion();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String consulta = "select * from productos";
+        String consulta = "select productos.*,proveedores.nombres_proveedor from productos inner join proveedores  on productos.nit_proveedor = proveedores.nit_proveedor";
         	ps = conn.getConnection().prepareStatement(consulta);
             rs = ps.executeQuery();
             while(rs.next()) {
@@ -73,6 +73,7 @@ public class ProductoDAO {
             	 prod.setNombre_producto(rs.getString(4));
             	 prod.setPrecio_compra(rs.getDouble(5));
             	 prod.setPrecio_venta(rs.getDouble(6));
+            	 prod.setNombre_proveedor(rs.getString(7));
             	 listaproductos.add(prod);
             }
         } catch (SQLException e) {

@@ -105,7 +105,7 @@
                   <tr>
                   	<td><%=prod.getCodigo_producto() %></td>
                   	<td><%=prod.getNombre_producto()%></td>
-                  	<td><%=prod.getNit_proveedor()%></td>
+                  	<td><%=prod.getNombre_proveedor()%></td>
                   	<td>$<%=prod.getPrecio_compra()%></td>
                   	<td>$<%=prod.getPrecio_venta()%></td>
                   	<td><%=prod.getIva_compra()%> %</td>

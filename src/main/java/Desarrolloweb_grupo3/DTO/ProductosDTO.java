@@ -8,6 +8,13 @@ public class ProductosDTO {
 	private String nombre_producto;
 	private double precio_compra;
 	private double precio_venta;
+	private String nombre_proveedor;
+	public String getNombre_proveedor() {
+		return nombre_proveedor;
+	}
+	public void setNombre_proveedor(String nombre_proveedor) {
+		this.nombre_proveedor = nombre_proveedor;
+	}
 	public long getCodigo_producto() {
 		return codigo_producto;
 	}
