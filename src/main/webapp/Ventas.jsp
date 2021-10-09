@@ -35,7 +35,7 @@
                         <li class="nav-item"><a class="nav-link" href="Productos.jsp">Gestión Productos</a></li>
                         <li class="nav-item"><a class="nav-link" href="Proveedores.jsp">Gestión Proveedores</a></li>
                         <li class="nav-item"><a class="nav-link" href="Ventas.jsp">Ventas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Ventas.jsp">Reportes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Reportes.jsp">Reportes</a></li>
                     </ul>
                 </div>
             </div>
@@ -73,7 +73,7 @@
 						                {
 						                	%>    
                     <td colspan=2><select class="form-control" name="txtusuario">
-                    <option value="<%=usu.getCedula()%>"><%=usu.getEmail() %></option><%} %>
+                    <option value="<%=usu.getCedula()%>"><%=usu.getEmail() %></option> <%} %>
                     </select></td>
                     
                     </tr>

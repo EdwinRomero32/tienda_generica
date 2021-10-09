@@ -31,7 +31,7 @@
                 <div class="masthead-subheading">Proyecto desarrollado por el grupo 3 curso 58 </div>
                
                  <div class="masthead-subheading">Edwin Romero</div>
-                  <div class="masthead-subheading">Gilbert Romero</div>
+                  <div class="masthead-subheading">Gilberth Romero</div>
                    <div class="masthead-subheading">Yulieth Rodriguez</div>
                 <a class="btn btn-primary btn-xl text-uppercase" href="index.jsp">Salir</a>
             </div>
