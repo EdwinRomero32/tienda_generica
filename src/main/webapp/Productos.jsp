@@ -32,6 +32,7 @@
                         <li class="nav-item"><a class="nav-link" href="Productos.jsp">Gestión Productos</a></li>
                         <li class="nav-item"><a class="nav-link" href="Proveedores.jsp">Gestión Proveedores</a></li>
                         <li class="nav-item"><a class="nav-link" href="Ventas.jsp">Ventas</a></li>
+                        <li class="nav_item"><a class="nav-link" href="Reportes.jsp">Reportes</a></li>
                            <li class="nav-item"><a class="nav-link" href="index.jsp">Salir</a></li>
                     </ul>
                 </div>
@@ -72,7 +73,8 @@
                         </div>
                     <div class="text-center">
                     <input class="btn btn-primary btn-xl text-uppercase"  type="submit"  name="btnagregar" value="Agregar"> 
-                    <input class="btn btn-primary btn-xl text-uppercase"  type="reset"  name="limpiar" value="Limpiar">      
+                    <input class="btn btn-primary btn-xl text-uppercase"  type="reset"  name="limpiar" value="Limpiar">   
+                    <a href="Productos2.jsp" class="btn btn-primary btn-xl text-uppercase">Subir por archivo</a>  
                     </div></form>
                 <br>
             <div id="contenidotabla" class="contabla">    

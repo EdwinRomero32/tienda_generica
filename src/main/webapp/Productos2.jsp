@@ -1,19 +1,17 @@
-<%@page import="Desarrolloweb_grupo3.DAO.UsuarioDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page session = "true" %>
- 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    	<title>Reportes</title>
+    	<title>Gestion Productos</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link href="css/styles.css" rel="stylesheet" />
-         <link href="css/estilo.css" rel="stylesheet" />
+        <link href="css/estilo.css" rel="stylesheet" />
+       
     </head>
     <body id="page-top">
+        <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand"><img src="assets/img/logos/logo.png" alt="..." /></a>
@@ -21,7 +19,7 @@
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
-                 <div class="collapse navbar-collapse" id="navbarResponsive">
+                <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     	<li class="nav-item"><a class="nav-link" href="Usuarios.jsp">Gestión Usuarios</a></li>
                         <li class="nav-item"><a class="nav-link" href="Clientes.jsp">Gestión Clientes</a></li>
@@ -33,35 +31,36 @@
                 </div>
             </div>
         </nav>
-  <section class="page-section" id="contact">
+        <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Reportes del sistema</h2>
-                    <h3 class="section-subheading text-muted">Seleccione el reporte</h3>
+                    <h2 class="section-heading text-uppercase">Subir Productos por archivo</h2>
                 </div>
                 </div>
-                <form id="login" action ="<%=request.getContextPath()%>/gestionreporte" method="POST">
+                <br>
+                        <br>
+                        <br>
+                        <br>
+                <form  action ="<%=request.getContextPath()%>/gestionprodu" method="POST"  enctype="multipart/form-data">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
-                            <div class="form-group">
-                               <div class="algo">
-                                
-                                <input class="form-control" id="name" name="txtusuario" type="text" placeholder="Escriba un criterio de busqueda" required/>
+                        <div class="algo">
+                        <br>
+                        <br>
+                                <input class="form-control"  name="archivo" type="file" accept=".csv" multiple/>
                                 <br>
-                                
-                    			 <br>
                             </div>
                           </div>
                         </div>
-                       
-                    </div>
-                    </div>
-                    <div class="text-center"><input class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit"  name="btnlistausu" value="Listar usuarios"></div><br>
-                     <div class="text-center"><input class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit"  name="btnlistapro" value="Lista de productos"></div>
-                </form>
-                
-           
-        </section>
-		
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        
+                    <div class="text-center">
+                    <input class="btn btn-primary btn-xl text-uppercase"  type="submit"  name="btnsubir" value="Subir"> 
+                    </div></form>
+                <br>
 </body>
 </html>

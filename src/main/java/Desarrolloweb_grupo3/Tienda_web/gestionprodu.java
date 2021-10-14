@@ -116,5 +116,9 @@ public class gestionprodu extends HttpServlet {
             ex.printStackTrace();
         }  
 		}
+	
+	if(request.getParameter("btnsubir")!=null) {
+		
+		}
 	}
 }
