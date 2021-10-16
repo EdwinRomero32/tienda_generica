@@ -1,9 +1,18 @@
 package Desarrolloweb_grupo3.DAO;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
+
+
 
 import Desarrolloweb_grupo3.DTO.ProductosDTO;
 import Desarrolloweb_grupo3.DTO.ProveedoresDTO;
@@ -121,5 +130,8 @@ public class ProductoDAO {
 	            }
 			return Prod;
 	   }
+	 
+	 
+	 
 }
 

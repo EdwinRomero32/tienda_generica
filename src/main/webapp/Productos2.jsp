@@ -41,13 +41,13 @@
                         <br>
                         <br>
                         <br>
-                <form  action ="<%=request.getContextPath()%>/gestionprodu" method="POST"  enctype="multipart/form-data">
+                <form  action ="<%=request.getContextPath()%>/cargaArchivo" method="POST" enctype='multipart/form-data'>
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                         <div class="algo">
                         <br>
                         <br>
-                                <input class="form-control"  name="archivo" type="file" accept=".csv" multiple/>
+                               <input class="form-control" type="file" name="archivo"> 
                                 <br>
                             </div>
                           </div>

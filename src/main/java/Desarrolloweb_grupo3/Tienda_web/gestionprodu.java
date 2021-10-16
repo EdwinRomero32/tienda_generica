@@ -3,6 +3,8 @@ package Desarrolloweb_grupo3.Tienda_web;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -117,8 +119,6 @@ public class gestionprodu extends HttpServlet {
         }  
 		}
 	
-	if(request.getParameter("btnsubir")!=null) {
-		
-		}
+	
 	}
 }
